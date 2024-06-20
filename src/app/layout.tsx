@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
+
 import QueryProvider from '@/providers/query-provider'
+import { SheetProvider } from '@/providers/sheet-provider'
+import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
   title: 'Finance',
@@ -17,7 +20,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            <SheetProvider />
+            <Toaster />
+            {children}
+          </QueryProvider>
         </body>
       </html>
     </ClerkProvider>
