@@ -13,14 +13,18 @@ export const useCreateAccount = () => {
 
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
+      console.log('Sending request with json:', json)
       const response = await client.api.accounts.$post({ json })
-      return await response.json()
+      const data = await response.json()
+      console.log('received response:', data)
+      return data
     },
     onSuccess: () => {
       toast.success('Account created')
       queryClient.invalidateQueries({ queryKey: ['accounts'] })
     },
-    onError: () => {
+    onError: (err) => {
+      console.error('Faile to create', err)
       toast.error('Failed to create account')
     },
   })

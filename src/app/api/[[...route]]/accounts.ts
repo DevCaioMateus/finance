@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { clerkMiddleware, getAuth } from '@hono/clerk-auth'
-import { HTTPException } from 'hono/http-exception'
+// import { HTTPException } from 'hono/http-exception'
 import { zValidator } from '@hono/zod-validator'
 import { createId } from '@paralleldrive/cuid2'
 
@@ -13,10 +13,10 @@ const app = new Hono()
     const auth = getAuth(c)
 
     if (!auth?.userId) {
-      // return c.json({ error: 'Unauthorized' }, 401)
-      throw new HTTPException(401, {
-        res: c.json({ error: 'Unauthorized' }, 401),
-      })
+      return c.json({ error: 'Unauthorized' }, 401)
+      // throw new HTTPException(401, {
+      //   res: c.json({ error: 'Unauthorized' }, 401),
+      // })
     }
 
     const data = await db
@@ -37,10 +37,14 @@ const app = new Hono()
       const values = c.req.valid('json')
 
       if (!auth?.userId) {
-        throw new HTTPException(401, {
-          res: c.json({ error: 'Unauthorized' }, 401),
-        })
+        return c.json({ error: 'Unauthorized' }, 401)
+        // throw new HTTPException(401, {
+        //   res: c.json({ error: 'Unauthorized' }, 401),
+        // })
       }
+
+      console.log('Received values:', values)
+      console.log('Authenticated user ID:', auth.userId)
 
       const [data] = await db
         .insert(accounts)
@@ -50,6 +54,8 @@ const app = new Hono()
           ...values,
         })
         .returning()
+
+      console.log('inserted data', { data })
 
       return c.json({ data })
     },
