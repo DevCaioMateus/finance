@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1718855404163,
+      "tag": "0000_panoramic_bucky",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1718856204186,
+      "tag": "0001_graceful_hellfire_club",
+      "breakpoints": true
+    }
+  ]
+}
