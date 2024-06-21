@@ -15,6 +15,20 @@
       "when": 1718856204186,
       "tag": "0001_graceful_hellfire_club",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1718980029698,
+      "tag": "0002_sleepy_saracen",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1718984843801,
+      "tag": "0003_deep_leo",
+      "breakpoints": true
     }
   ]
 }
