@@ -31,7 +31,7 @@ const CategoriesPage = () => {
           </CardHeader>
           <CardContent>
             <div className="h-[500px] w-full flex items-center justify-center">
-              <Loader2 className="size-6 text-slate-300 animated-spin" />
+              <Loader2 className="size-6 text-slate-300 animate-spin" />
             </div>
           </CardContent>
         </Card>
