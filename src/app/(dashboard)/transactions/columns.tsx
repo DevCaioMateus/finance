@@ -16,6 +16,8 @@ import { Actions } from './actions'
 import { client } from '@/lib/hono'
 
 import { formatCurrency } from '@/lib/utils'
+import { AccountColumn } from '@/app/(dashboard)/transactions/account-column'
+import { CategoryColumn } from '@/app/(dashboard)/transactions/category-column'
 
 export type ResponseType = InferResponseType<
   typeof client.api.transactions.$get,
@@ -77,7 +79,13 @@ export const columns: ColumnDef<ResponseType>[] = [
       )
     },
     cell: ({ row }) => {
-      return <span>{row.original.category}</span>
+      return (
+        <CategoryColumn
+          id={row.original.id}
+          category={row.original.category}
+          categoryId={row.original.categoryId}
+        />
+      )
     },
   },
   {
@@ -133,7 +141,12 @@ export const columns: ColumnDef<ResponseType>[] = [
       )
     },
     cell: ({ row }) => {
-      return <span>{row.original.account}</span>
+      return (
+        <AccountColumn
+          account={row.original.account}
+          accountId={row.original.accountId}
+        />
+      )
     },
   },
   {
