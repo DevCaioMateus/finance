@@ -6,14 +6,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { inserTransactionSchema, insertAccountSchema } from '@/db/schema'
+import { inserTransactionSchema } from '@/db/schema'
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from '@/components/ui/form'
 
 import { Select } from '@/components/select'
