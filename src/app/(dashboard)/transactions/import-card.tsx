@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { parse, format } from 'date-fns'
 
@@ -5,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
 import { ImportTable } from './import-table'
-import { boolean } from 'drizzle-orm/mysql-core'
 
 import { convertAmountToMiliunits } from '@/lib/utils'
 
