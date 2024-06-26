@@ -61,7 +61,7 @@ export const CategoryForm = ({
               <FormControl>
                 <Input
                   disabled={disabled}
-                  placeholder="e.g Food, Travel, etc."
+                  placeholder="alimentação, viagens, etc."
                   {...field}
                 />
               </FormControl>
@@ -69,7 +69,7 @@ export const CategoryForm = ({
           )}
         />
         <Button className="w-full" disabled={disabled}>
-          {id ? 'Save changes' : 'Create category'}
+          {id ? 'Salvar mudanças' : 'Criar categoria'}
         </Button>
         {!!id && (
           <Button
@@ -80,7 +80,7 @@ export const CategoryForm = ({
             variant="outline"
           >
             <Trash className="size-4 mr-2" />
-            Delete category
+            Deletar categoria
           </Button>
         )}
       </form>

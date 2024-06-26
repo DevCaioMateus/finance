@@ -35,9 +35,9 @@ export const NewAccountSheet = () => {
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent className="space-y-4">
         <SheetHeader>
-          <SheetTitle>New Account</SheetTitle>
+          <SheetTitle>Nova conta</SheetTitle>
           <SheetDescription>
-            Create a new account to track your transactions.
+            Crie uma nova conta para administrar suas transações.
           </SheetDescription>
         </SheetHeader>
         <AccountForm

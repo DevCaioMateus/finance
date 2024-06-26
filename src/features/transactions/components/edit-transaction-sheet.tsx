@@ -121,8 +121,8 @@ export const EditTransactionSheet = () => {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent className="space-y-4">
           <SheetHeader>
-            <SheetTitle>Edit Transaction</SheetTitle>
-            <SheetDescription>Edit an existing transaction</SheetDescription>
+            <SheetTitle>Editar transações</SheetTitle>
+            <SheetDescription>Editar uma transação existente</SheetDescription>
           </SheetHeader>
           {isLoading ? (
             <div className="absolute inset-0 flex items-center justify-center">

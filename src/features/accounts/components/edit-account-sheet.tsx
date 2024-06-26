@@ -25,8 +25,8 @@ export type FormValues = z.input<typeof formSchema>
 
 export const EditAccountSheet = () => {
   const [ConfirmDialog, confirm] = useConfirm(
-    'Are you sure?',
-    'You are about to delete this account.',
+    'Tem certeza?',
+    'Você está prestes a excluir esta conta.',
   )
 
   const { isOpen, onClose, id } = useOpenAccount()
@@ -73,8 +73,8 @@ export const EditAccountSheet = () => {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent className="space-y-4">
           <SheetHeader>
-            <SheetTitle>Edit Account</SheetTitle>
-            <SheetDescription>Edit an existing account</SheetDescription>
+            <SheetTitle>Editar Conta</SheetTitle>
+            <SheetDescription>Editar uma conta existente</SheetDescription>
           </SheetHeader>
           {isLoading ? (
             <div className="absolute inset-0 flex items-center justify-center">

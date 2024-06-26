@@ -32,21 +32,21 @@ export const DataGrid = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-2 mb-8">
       <DataCard
-        title="Remaining"
+        title="Saldo"
         value={data?.remainingAmount}
         percentageChange={data?.remainingChange ?? 0}
         icon={FaPiggyBank}
         dateRange={dateRangeLabel}
       />
       <DataCard
-        title="Income"
+        title="Receitas"
         value={data?.incomeAmount}
         percentageChange={data?.incomeChange ?? 0}
         icon={FaArrowTrendUp}
         dateRange={dateRangeLabel}
       />
       <DataCard
-        title="Expenses"
+        title="Despesas"
         value={data?.expensesAmount}
         percentageChange={data?.expensesChange ?? 0}
         icon={FaArrowTrendDown}

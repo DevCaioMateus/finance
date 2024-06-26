@@ -106,11 +106,11 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gap-y-2 lg:flex-row lg:item-center lg:justify-between">
           <CardTitle className="text-xl line-clamp-1">
-            Import Transaction
+            Importar Transações
           </CardTitle>
           <div className="flex flex-col lg:flex-row items-center gap-y-2 gap-x-2">
             <Button size="sm" onClick={onCancel} className="w-full lg:w-auto">
-              Cancel
+              Cancelar
             </Button>
             <Button
               size="sm"

@@ -113,7 +113,7 @@ const TransactionsPage = () => {
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gap-y-2 lg:flex-row lg:item-center lg:justify-between">
           <CardTitle className="text-xl line-clamp-1">
-            Transactions History
+            Histórico de transações
           </CardTitle>
           <div className="flex items-center gap-x-2 gap-y-2 flex-col lg:flex-row">
             <Button
@@ -122,7 +122,7 @@ const TransactionsPage = () => {
               className="w-full lg:w-auto"
             >
               <Plus className="size-4 mr-2" />
-              Add new
+              Adicionar
             </Button>
             <UploadButton onUpload={onUpload} />
           </div>

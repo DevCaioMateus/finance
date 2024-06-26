@@ -53,7 +53,7 @@ export const AmountInput = ({
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            Use [+] for income and [-] for expenses
+            Use [+] para receitas e [-] para despesas
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -68,8 +68,8 @@ export const AmountInput = ({
         disabled={disabled}
       />
       <p className="text-xs text-muted-foreground mt-2">
-        {isIncome && 'This will count as income'}
-        {isExpense && 'This will count as an expense'}
+        {isIncome && 'Isso contará como receita'}
+        {isExpense && 'Isso contará como despesa'}
       </p>
     </div>
   )

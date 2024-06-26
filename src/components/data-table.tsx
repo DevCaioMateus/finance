@@ -45,8 +45,8 @@ export function DataTable<TData, TValue>({
   disabled,
 }: DataTableProps<TData, TValue>) {
   const [ConfirmDialog, confirm] = useConfirm(
-    'Are you sure?',
-    'You are about to perform a bulk delete.',
+    'Tem certeza?',
+    'Você está prestes a realizar uma exclusão em massa.',
   )
 
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -77,7 +77,7 @@ export function DataTable<TData, TValue>({
       <ConfirmDialog />
       <div className="flex items-center py-4">
         <Input
-          placeholder={`Filter ${filterKey}...`}
+          placeholder={`Filtrar por ${filterKey}...`}
           value={(table.getColumn(filterKey)?.getFilterValue() as string) ?? ''}
           onChange={(event) =>
             table.getColumn(filterKey)?.setFilterValue(event.target.value)
@@ -166,7 +166,7 @@ export function DataTable<TData, TValue>({
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          Previous
+          Anterior
         </Button>
         <Button
           variant="outline"
@@ -174,7 +174,7 @@ export function DataTable<TData, TValue>({
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
-          Next
+          Próxima
         </Button>
       </div>
     </div>

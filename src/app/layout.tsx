@@ -7,8 +7,8 @@ import { SheetProvider } from '@/providers/sheet-provider'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
-  title: 'Finance',
-  description: 'Manage your finances',
+  title: 'SimpleFinance',
+  description: 'Administrando suas finanças',
 }
 
 export default function RootLayout({

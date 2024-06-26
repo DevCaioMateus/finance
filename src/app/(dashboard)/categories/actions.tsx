@@ -21,8 +21,8 @@ type Props = {
 
 export const Actions = ({ id }: Props) => {
   const [ConfirmDialog, confirm] = useConfirm(
-    'Are you sure?',
-    'You are about to delete this transaction.',
+    'Tem certeza?',
+    'Você está prestes a excluir esta transação.',
   )
 
   const { onOpen } = useOpenCategory()
@@ -51,14 +51,14 @@ export const Actions = ({ id }: Props) => {
             onClick={() => onOpen(id)}
           >
             <Edit className="size-4 mr-2" />
-            Edit
+            Editar
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled={deleteMutation.isPending}
             onClick={handleDelete}
           >
             <Trash className="size-4 mr-2" />
-            Delete
+            Deletar
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
