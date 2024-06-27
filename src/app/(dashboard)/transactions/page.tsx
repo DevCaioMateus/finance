@@ -63,7 +63,7 @@ const TransactionsPage = () => {
     const accountId = await confirm()
 
     if (!accountId) {
-      return toast.warning('Please select an account to continue.')
+      return toast.warning('Selecione uma conta para continuar.')
     }
 
     const data = values.map((value) => ({
@@ -131,7 +131,7 @@ const TransactionsPage = () => {
           <DataTable
             columns={columns}
             data={transactions}
-            filterKey="payee"
+            filterKey={{ title: 'Beneficiário', value: 'payee' }}
             onDelete={(row) => {
               const ids = row.map((r) => r.original.id)
               deleteTransactions.mutate({ ids })

@@ -13,7 +13,12 @@ type Props = {
   onChange: (columnsIndex: number, value: string | null) => void
 }
 
-const options = ['valor', 'beneficiário', 'data']
+// const options = ['valor', 'beneficiário', 'data']
+const options = [
+  { title: 'valor', value: 'value' },
+  { title: 'beneficiário', value: 'payee' },
+  { title: 'data', value: 'date' },
+]
 
 export const TableHeadSelect = ({
   columnIndex,
@@ -38,17 +43,17 @@ export const TableHeadSelect = ({
         <SelectItem value="skip">Pular</SelectItem>
         {options.map((option, index) => {
           const disabled =
-            Object.values(selectedColumns).includes(option) &&
-            selectedColumns[`column_${columnIndex}`] !== option
+            Object.values(selectedColumns).includes(option.value) &&
+            selectedColumns[`column_${columnIndex}`] !== option.value
 
           return (
             <SelectItem
               key={index}
-              value={option}
+              value={option.value}
               disabled={disabled}
               className="capitalize"
             >
-              {option}
+              {option.title}
             </SelectItem>
           )
         })}

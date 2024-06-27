@@ -29,10 +29,15 @@ import { Input } from '@/components/ui/input'
 
 import { useConfirm } from '@/hooks/use-confirm'
 
+interface FilterKeyProps {
+  title: string
+  value: string
+}
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
-  filterKey: string
+  filterKey: FilterKeyProps
   onDelete: (rows: Row<TData>[]) => void
   disabled?: boolean
 }
@@ -77,10 +82,12 @@ export function DataTable<TData, TValue>({
       <ConfirmDialog />
       <div className="flex items-center py-4">
         <Input
-          placeholder={`Filtrar por ${filterKey}...`}
-          value={(table.getColumn(filterKey)?.getFilterValue() as string) ?? ''}
+          placeholder={`Filtrar por ${filterKey.title}...`}
+          value={
+            (table.getColumn(filterKey.value)?.getFilterValue() as string) ?? ''
+          }
           onChange={(event) =>
-            table.getColumn(filterKey)?.setFilterValue(event.target.value)
+            table.getColumn(filterKey.value)?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
